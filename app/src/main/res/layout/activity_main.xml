@@ -5,18 +5,63 @@
 
     <data>
 
+        <variable
+            name="model"
+            type="com.cb.basic.myapp.MainActivity" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".myapp.MainActivity">
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/tv_one"
-            android:layout_width="400dp"
-            android:layout_height="400dp"
-            android:text="6666"
-            android:textSize="66dp" />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="666666666"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="一定要看代码你才能看出厉害之处"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(thisView)->model.item(thisView,0)}"
+            android:text="RecyclerView使用示例"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(thisView)->model.item(thisView,1)}"
+            android:text="Fragment使用示例"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(thisView)->model.item(thisView,2)}"
+            android:text="Fragment懒加载使用示例"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{(thisView)->model.item(thisView,3)}"
+            android:text="Activity/Fragment数据联动"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
 </layout>

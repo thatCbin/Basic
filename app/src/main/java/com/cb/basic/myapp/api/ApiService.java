@@ -27,5 +27,5 @@ public interface ApiService {
      * @return
      */
     @GET(BASE_MOVIE_URL)
-    Observable<NameBean> test(@Query("action") String action);
+    Observable<NameBean> Test(@Query("action") String action);
 }

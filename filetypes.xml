@@ -1,0 +1,15 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="header_variety_detail.xml" type="PLAIN_TEXT" />
+      <mapping pattern="activtiy_movie_video.xml" type="PLAIN_TEXT" />
+      <mapping pattern="bg_btn_setting.xml" type="PLAIN_TEXT" />
+      <mapping ext="aar" type="PLAIN_TEXT" />
+      <mapping pattern="bg_btn_comment_ok" type="XML" />
+      <mapping pattern="bg_setting_btn_blue" type="XML" />
+      <mapping pattern="header_variety_detail" type="XML" />
+      <mapping pattern="bg_btn_white" type="XML" />
+      <mapping ext="xm" type="XML" />
+    </extensionMap>
+  </component>
+</application>

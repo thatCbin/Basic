@@ -1,0 +1,16 @@
+<scheme name="_@user_Default" version="142" parent_scheme="Default">
+  <metaInfo>
+    <property name="created">2019-06-17T10:39:01</property>
+    <property name="ide">AndroidStudio</property>
+    <property name="ideVersion">3.4.1.0</property>
+    <property name="modified">2019-07-11T10:01:14</property>
+    <property name="originalScheme">Default</property>
+  </metaInfo>
+  <colors>
+    <option name="FILESTATUS_COPIED" value="a7700" />
+    <option name="FILESTATUS_IDEA_SVN_FILESTATUS_EXTERNAL" value="72a038" />
+    <option name="FILESTATUS_IDEA_SVN_FILESTATUS_OBSTRUCTED" value="727238" />
+    <option name="FILESTATUS_IDEA_SVN_REPLACED" value="a7700" />
+    <option name="FILESTATUS_RENAMED" value="3a8484" />
+  </colors>
+</scheme>

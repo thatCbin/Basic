@@ -1,0 +1,12 @@
+<application>
+  <component name="ParameterNameHintsSettings">
+    <blacklists>
+      <blacklist language="Java">
+        <added pattern="com.sgn.popcornmovie.utils.ResourcesUtils.getColor(color,context)" />
+        <added pattern="android.widget.FrameLayout.FrameLayout(context)" />
+        <added pattern="com.sgn.popcornmovie.ui.presenter.VarietyGetUrlIdPresent.addMovieHistory(movieId,imei,episode)" />
+        <added pattern="com.lljjcoder.citypickerview.widget.CityPicker.Builder.Builder(context)" />
+      </blacklist>
+    </blacklists>
+  </component>
+</application>

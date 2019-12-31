@@ -1,4 +1,4 @@
-package com.cb.basic.adapter;
+package com.cb.basic.base.adapter;
 
 import android.view.View;
 

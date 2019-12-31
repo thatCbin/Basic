@@ -1,4 +1,4 @@
-package com.cb.basic.adapter;
+package com.cb.basic.base.adapter;
 
 /**
  * create date on 2019/12/31

@@ -1,4 +1,4 @@
-package com.cb.basic.api;
+package com.cb.basic.base.api;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

@@ -1,7 +1,4 @@
-package com.cb.basic.base;
-
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
+package com.cb.basic.base.ui;
 
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.Observer;
@@ -13,19 +10,19 @@ import com.cb.basic.lifecycle.BaseViewModel;
  * create date on 2019/12/31
  *
  * @author Cbin
- * describe
+ * describe ViewModel、ViewDataBinding都需要的基类
  */
+public abstract class BaseActivity<VM extends BaseViewModel, VDB extends ViewDataBinding>
+        extends BaseNoModelActivity<VDB> {
 
-public abstract class BaseFragment<VM extends BaseViewModel, VDB extends ViewDataBinding>
-        extends BaseNoModelFragment<VDB> {
 
     protected VM viewModel;
 
     @Override
-    protected VDB initDataBinding(LayoutInflater inflater, int layoutId, ViewGroup container) {
-        VDB db = super.initDataBinding(inflater, layoutId, container);
+    protected VDB initDataBinding(int layoutId) {
+        VDB db = super.initDataBinding(layoutId);
         /**
-         * 将这两个初始化函数插在{@link BaseFragment#initDataBinding}
+         * 将这两个初始化函数插在{@link BaseActivity#initDataBinding}
          */
         viewModel = initViewModel();
         initObserve();

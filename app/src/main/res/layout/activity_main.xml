@@ -10,8 +10,13 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".zapp.MainActivity">
+        tools:context=".myapp.MainActivity">
 
-
+        <TextView
+            android:id="@+id/tv_one"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:text="6666"
+            android:textSize="66dp" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

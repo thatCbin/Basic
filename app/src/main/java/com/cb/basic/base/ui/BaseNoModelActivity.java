@@ -1,4 +1,4 @@
-package com.cb.basic.base;
+package com.cb.basic.base.ui;
 
 import android.content.Context;
 import android.os.Bundle;

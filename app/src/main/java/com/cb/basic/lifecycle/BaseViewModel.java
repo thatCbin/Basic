@@ -6,9 +6,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 
 import com.cb.basic.bean.DialogBean;
+import com.cb.basic.myapp.api.ApiRetrofit;
+import com.cb.basic.myapp.api.ApiService;
+import com.socks.library.KLog;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import rx.Observable;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+import rx.subscriptions.CompositeSubscription;
 
 /**
  * create date on 2019/12/31
@@ -17,6 +25,10 @@ import io.reactivex.disposables.Disposable;
  * describe ViewModel基类，管理rxJava发出的请求，ViewModel销毁同时也取消请求
  */
 public class BaseViewModel extends ViewModel {
+
+    protected ApiService mApiService = ApiRetrofit.getInstance().getApiService();
+
+    protected CompositeSubscription mCompositeSubscription;
 
     /**
      * 管理RxJava请求
@@ -61,5 +73,19 @@ public class BaseViewModel extends ViewModel {
         }
         showDialog = null;
         error = null;
+    }
+
+    public void addSubscription(Observable observable, Subscriber subscriber) {
+        if (mCompositeSubscription == null) {
+            mCompositeSubscription = new CompositeSubscription();
+        }
+        boolean unsubscribed = subscriber.isUnsubscribed();
+        KLog.e(unsubscribed);
+        mCompositeSubscription.add(observable
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber));
+        boolean unsubscribed2 = subscriber.isUnsubscribed();
+        KLog.e(unsubscribed2);
     }
 }

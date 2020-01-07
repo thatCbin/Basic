@@ -16,35 +16,18 @@ import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
 public class NameViewModel extends BaseViewModel {
-    //protected ApiService mApiService = ApiRetrofit.getInstance().getApiService();
-    private ApiService mApiService = ApiRetrofit.getInstance().getApiService();
-    private CompositeSubscription mCompositeSubscription;
-
-    public void addSubscription(Observable observable, Subscriber subscriber) {
-        if (mCompositeSubscription == null) {
-            mCompositeSubscription = new CompositeSubscription();
-        }
-        boolean unsubscribed = subscriber.isUnsubscribed();
-        KLog.e(unsubscribed);
-        mCompositeSubscription.add(observable
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(subscriber));
-        boolean unsubscribed2 = subscriber.isUnsubscribed();
-        KLog.e(unsubscribed2);
-    }
 
     /**
-     *  当前数据请求成功时回调
+     * 当前数据请求成功时回调
      */
-    protected MutableLiveData<NameResponse> responst=new MutableLiveData<>();
+    protected MutableLiveData<NameResponse> responst = new MutableLiveData<>();
 
     /**
-     *  请求网络
+     * 请求网络
      */
-    public void Test(){
-        String action="Test";
-        addSubscription(mApiService.Test(action), new Subscriber<NameResponse> (){
+    public void Test() {
+        String action = "Test";
+        addSubscription(mApiService.Test(action), new Subscriber<NameResponse>() {
             @Override
             public void onCompleted() {
 

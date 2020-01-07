@@ -2,22 +2,24 @@ package com.cb.basic.myapp;
 
 import android.view.View;
 
+import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.cb.basic.R;
 import com.cb.basic.base.ui.BaseActivity;
-import com.cb.basic.base.ui.BaseNoModelActivity;
 import com.cb.basic.databinding.ActivityMainBinding;
-import com.cb.basic.lifecycle.BaseViewModel;
+import com.cb.basic.myapp.bean.entity.NameEntity;
 import com.cb.basic.myapp.bean.response.NameResponse;
 import com.cb.basic.uitils.UIUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Cbin
  */
-public class MainActivity extends BaseActivity<NameViewModel,ActivityMainBinding> {
+public class MainActivity extends BaseActivity<NameViewModel, ActivityMainBinding> {
     @Override
     protected int provideContentViewId() {
         return R.layout.activity_main;
@@ -32,14 +34,25 @@ public class MainActivity extends BaseActivity<NameViewModel,ActivityMainBinding
     protected void initView() {
     }
 
+    private List<NameEntity> mDataList = new ArrayList();
+
     @Override
     protected void initData() {
         dataBinding.setModel(this);
         viewModel.getNews().observe(this, new Observer<NameResponse>() {
             @Override
             public void onChanged(NameResponse response) {
-                if (response.is_ok==0){
+                if (response.is_ok == 0) {
                     System.out.println("**9 请求成功");
+                    NameEntity entity = new NameEntity();
+                    entity.setName(response.result.getName());
+                    entity.setAge(response.result.getAge());
+                    mDataList.add(entity);
+                    System.out.println("**9+" + mDataList);
+                    UIUtils.showToast(entity.getName());
+                    UIUtils.showToast(entity.getAge());
+                    dataBinding.setName(response);
+                    dataBinding.notifyChange();
                 }
             }
         });
@@ -49,7 +62,7 @@ public class MainActivity extends BaseActivity<NameViewModel,ActivityMainBinding
         switch (position) {
             case 0:
                 viewModel.Test();
-                UIUtils.showToast(position + "0");
+
                 break;
             case 1:
                 UIUtils.showToast(position + "1");

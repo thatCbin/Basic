@@ -1,12 +1,8 @@
 package com.cb.basic.myapp.api;
 
-import com.cb.basic.myapp.bean.NameBean;
+import com.cb.basic.myapp.bean.response.NameResponse;
 
-import okhttp3.MultipartBody;
 import retrofit2.http.GET;
-import retrofit2.http.Multipart;
-import retrofit2.http.POST;
-import retrofit2.http.Part;
 import retrofit2.http.Query;
 import rx.Observable;
 
@@ -27,5 +23,5 @@ public interface ApiService {
      * @return
      */
     @GET(BASE_MOVIE_URL)
-    Observable<NameBean> Test(@Query("action") String action);
+    Observable<NameResponse> Test(@Query("action") String action);
 }

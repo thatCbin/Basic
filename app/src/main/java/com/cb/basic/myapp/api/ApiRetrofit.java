@@ -3,7 +3,7 @@ package com.cb.basic.myapp.api;
 import android.os.Build;
 import android.webkit.WebSettings;
 
-import com.cb.basic.base.app.BaseApp;
+import com.cb.basic.myapp.api.app.MyApp;
 import com.cb.basic.uitils.NetWorkUtils;
 import com.cb.basic.uitils.UIUtils;
 import com.cb.basic.myapp.api.constants.ApiConstant;
@@ -48,13 +48,13 @@ public class ApiRetrofit {
         CacheControl cacheControl = cacheBuilder.build();
 
         Request request = chain.request();
-        if (!NetWorkUtils.isNetworkAvailable(BaseApp.getContext())) {
+        if (!NetWorkUtils.isNetworkAvailable(MyApp.getContext())) {
             request = request.newBuilder()
                     .cacheControl(cacheControl)
                     .build();
         }
         Response originalResponse = chain.proceed(request);
-        if (NetWorkUtils.isNetworkAvailable(BaseApp.getContext())) {
+        if (NetWorkUtils.isNetworkAvailable(MyApp.getContext())) {
             int maxAge = 0; // read from cache
             return originalResponse.newBuilder()
                     .removeHeader("Pragma")
@@ -105,7 +105,7 @@ public class ApiRetrofit {
 
     public ApiRetrofit() {
         //cache url
-        File httpCacheDirectory = new File(BaseApp.getContext().getCacheDir(), "responses");
+        File httpCacheDirectory = new File(MyApp.getContext().getCacheDir(), "responses");
         int cacheSize = 10 * 1024 * 1024; // 10 MiB
         Cache cache = new Cache(httpCacheDirectory, cacheSize);
 

@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.cb.basic.myapp.MainActivity" />
+            type="com.cb.basic.myapp.ui.activity.MainActivity" />
 
         <variable
             name="name"

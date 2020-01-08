@@ -1,4 +1,4 @@
-package com.cb.basic.myapp;
+package com.cb.basic.myapp.ui.viewmodel;
 
 import androidx.lifecycle.MutableLiveData;
 
@@ -15,7 +15,7 @@ import rx.Subscriber;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
-public class NameViewModel extends BaseViewModel {
+public class MainViewModel extends BaseViewModel {
 
     /**
      * 当前数据请求成功时回调

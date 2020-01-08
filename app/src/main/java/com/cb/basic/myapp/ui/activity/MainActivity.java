@@ -1,14 +1,14 @@
-package com.cb.basic.myapp;
+package com.cb.basic.myapp.ui.activity;
 
 import android.view.View;
 
-import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.cb.basic.R;
 import com.cb.basic.base.ui.BaseActivity;
 import com.cb.basic.databinding.ActivityMainBinding;
+import com.cb.basic.myapp.ui.viewmodel.MainViewModel;
 import com.cb.basic.myapp.bean.entity.NameEntity;
 import com.cb.basic.myapp.bean.response.NameResponse;
 import com.cb.basic.uitils.UIUtils;
@@ -19,15 +19,15 @@ import java.util.List;
 /**
  * @author Cbin
  */
-public class MainActivity extends BaseActivity<NameViewModel, ActivityMainBinding> {
+public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBinding> {
     @Override
     protected int provideContentViewId() {
         return R.layout.activity_main;
     }
 
     @Override
-    protected NameViewModel initViewModel() {
-        return ViewModelProviders.of(this).get(NameViewModel.class);
+    protected MainViewModel initViewModel() {
+        return ViewModelProviders.of(this).get(MainViewModel.class);
     }
 
     @Override

@@ -52,7 +52,7 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
                     UIUtils.showToast(entity.getName());
                     UIUtils.showToast(entity.getAge());
                     dataBinding.setName(response);
-                    dataBinding.notifyChange();
+                    //dataBinding.notifyChange();
                 }
             }
         });
@@ -62,7 +62,6 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         switch (position) {
             case 0:
                 viewModel.Test();
-
                 break;
             case 1:
                 UIUtils.showToast(position + "1");

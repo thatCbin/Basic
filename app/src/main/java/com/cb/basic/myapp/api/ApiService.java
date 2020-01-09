@@ -14,7 +14,6 @@ import rx.Observable;
  */
 public interface ApiService {
     String BASE_MOVIE_URL = "api/movie.php";
-    String BASE_BXM_URL = "http://2b.tandehao.com/adMaterialApi/getAdMaterial";
 
     /**
      * 测试接口

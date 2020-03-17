@@ -8,9 +8,9 @@ import androidx.lifecycle.ViewModelProviders;
 import com.cb.basic.R;
 import com.cb.basic.base.ui.BaseActivity;
 import com.cb.basic.databinding.ActivityMainBinding;
-import com.cb.basic.myapp.ui.viewmodel.MainViewModel;
 import com.cb.basic.myapp.bean.entity.NameEntity;
 import com.cb.basic.myapp.bean.response.NameResponse;
+import com.cb.basic.myapp.ui.viewmodel.MainViewModel;
 import com.cb.basic.uitils.UIUtils;
 
 import java.util.ArrayList;
